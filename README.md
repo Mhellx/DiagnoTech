@@ -1,1 +1,1 @@
-# VitaLab
+# DiagnoTech

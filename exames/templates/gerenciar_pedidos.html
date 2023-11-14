@@ -31,11 +31,8 @@
           </select>
         </td>
         <td>
-          <a
-            href="{% url 'cancelar_pedido' pedido.id %}"
-            class="btn btn-danger {% if not pedido.agendado %} disabled {% endif %}"
-            >Cancelar</a
-          >
+          <a href="{% url 'cancelar_pedido' pedido.id %}"
+            class="btn btn-danger {% if not pedido.agendado %} disabled {% endif %}">Cancelar</a>
         </td>
       </tr>
       {% endfor %}

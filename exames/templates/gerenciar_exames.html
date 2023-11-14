@@ -23,11 +23,7 @@
         <div class="col-md">{{exame.badge_template}}</div>
         <div class="col-md">
           {% if exame.status == 'F' %}
-          <a
-            href="{% url 'permitir_abrir_exame' exame.id %}"
-            class="btn btn-light"
-            >Abrir</a
-          >
+          <a href="{% url 'permitir_abrir_exame' exame.id %}" class="btn btn-light">Abrir</a>
           {% else %}
           <a href="#" class="btn btn-light disabled">Abrir</a>
           {% endif %}
@@ -46,11 +42,7 @@
         <div class="col-md">{{exame.badge_template}}</div>
         <div class="col-md">
           {% if exame.status == 'F' %}
-          <a
-            href="{% url 'permitir_abrir_exame' exame.id %}"
-            class="btn btn-light"
-            >Abrir</a
-          >
+          <a href="{% url 'permitir_abrir_exame' exame.id %}" class="btn btn-light">Abrir</a>
           {% else %}
           <a href="#" class="btn btn-light disabled">Abrir</a>
           {% endif %}

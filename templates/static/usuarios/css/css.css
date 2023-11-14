@@ -2,6 +2,24 @@ body {
   background-image: url("/static/geral/img/bg1.png");
   background-size: cover;
 }
+
 p {
   color: var(--light-color);
+}
+
+.logo {
+  height: 300px;
+  margin-right: 50px;
+  display: flex;
+}
+
+.divCadastro {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.divCadastro h3 {
+  margin-right: 50px;
 }

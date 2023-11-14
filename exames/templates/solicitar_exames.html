@@ -10,26 +10,22 @@
 
       <form action="{% url 'solicitar_exames' %}" method="POST">
         {% csrf_token %}
-        <label for="">Selecione os exames para realizar</label>
-        <select class="select form-control bg-select" multiple name="exames">
+        Selecione os exames para realizar
           {% for exame in exames %}
-          <option class="opt" value="{{exame.id}}">{{exame.nome}}</option>
+          <div>
+            <input id="{{exame.id}}" type="checkbox" value="{{exame.id}}" name="exames" class="checkbox" ><label for="{{exame.id}}">{{exame.nome}}</label>
+          </div>
           {% endfor %}
-        </select>
         <br />
-        <input
-          type="submit"
-          class="btn-default tamanho-2"
-          name="ultimo_nome"
-          value="Solicitar exames"
-        />
+        <input type="submit" class="btn-default tamanho-2" name="ultimo_nome" value="Solicitar exames" />
       </form>
     </div>
 
     <div class="col-md-2"></div>
 
     <div class="col-md card">
-      {% if solicitacao_exames %} {% for exame in solicitacao_exames %}
+      {% if solicitacao_exames %}
+      {% for exame in solicitacao_exames %}
       <div style="font-size: 20px; font-weight: bold">
         {% if exame.disponivel %}
         <img src="{% static 'exames/img/check.png' %}" />
@@ -42,8 +38,7 @@
 
       <hr style="color: white" />
       <div>
-        <label>Total: </label
-        ><label class="previa-preco">R$ {{preco_total}}</label>
+        <label>Total: </label><label class="previa-preco">R$ {{preco_total}}</label>
       </div>
       <br />
       <h5>Data: {{data}}</h5>

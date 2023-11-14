@@ -11,24 +11,14 @@
   <div class="alert {{ message.tags }}">{{ message }}</div>
   {% endfor %} {% endif %}
   <div class="row">
+    <form action="{% url 'gerenciar_clientes' %}" method="GET" class="row">
       <div class="col-md">
-        <form action="{% url 'gerenciar_clientes' %}" method="GET">
         <label for="">Nome</label>
-        <input
-          type="text"
-          class="form-control"
-          name="nome"
-          value="{{nome_completo}}"
-        />
+        <input type="text" class="form-control" name="nome" value="{{nome_completo}}" />
       </div>
       <div class="col-md">
         <label for="">E-mail</label>
-        <input
-          type="text"
-          class="form-control"
-          name="email"
-          value="{{email}}"
-        />
+        <input type="text" class="form-control" name="email" value="{{email}}" />
       </div>
       <div class="col-md">
         <br />
@@ -47,7 +37,9 @@
 
       {% for cliente in clientes %}
       <tr class="linha-tabela">
-        <td><a href="#">{{cliente.get_full_name}}</a></td>
+        <td>
+          <a href="{% url 'cliente' cliente.id %}">{{cliente.get_full_name}}</a>
+        </td>
         <td>{{cliente.email}}</td>
 
         <td></td>

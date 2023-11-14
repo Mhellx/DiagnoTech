@@ -1,17 +1,63 @@
 :root {
   --main-color: #151c34;
   --dark-color: #0c121c;
-  --light-color: #6de6ee;
+  --light-color: #10d1df;
   --contrast-color: #f4c96b;
   --differential-color: #066668;
 }
+
 * {
   color: white;
+  font-family: "Poppins", sans-serif;
 }
+
+header {
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: -30px;
+  padding: 0 20px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.usuario {
+  width: 80%;
+  float: left;
+  display: flex;
+}
+
+.admin {
+  width: 20%;
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  margin-right: 30px;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  transition: 0.3s;
+}
+
+header a:hover {
+  transform: scale(1.1);
+  color: #80e2e9;
+}
+
+header img {
+  height: 55px;
+}
+
 .font-destaque {
   color: var(--light-color);
   font-size: 40px;
 }
+
 .input-default {
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--differential-color);
@@ -19,18 +65,29 @@
   padding: 7px;
   width: 66%;
 }
+
 .w100 {
   width: 100%;
 }
+
 .btn-default {
   background-color: var(--light-color);
   color: black;
   width: 31%;
   padding: 10px;
   margin-right: 25px;
-  border: none;
+  border: 2px solid var(--differential-color);
   border-radius: 10px;
+  transition: 0.3s;
 }
+
+.btn-default:hover {
+  transform: scale(1.1);
+  background-color: var(--differential-color);
+  border-color: var(--dark-color);
+  color: white;
+}
+
 .font-destaque-secundaria {
   color: var(--light-color);
   font-size: 35px;

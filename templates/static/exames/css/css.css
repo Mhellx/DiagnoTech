@@ -1,11 +1,29 @@
 body {
   background-image: url("/static/geral/img/bg2.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  /*background: linear-gradient(180deg, #010817, #021b2e, #062e3a, #085e5b) no-repeat;*/
 }
 
-.bg-select {
-  background-color: transparent;
-  border-color: var(--differential-color);
+.checkbox{
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+label {
+  font-size: 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+label:hover {
+  transform: scale(1.1);
+  color: #80e2e9;
+}
+
+.requer_senha:hover {
+  transform: scale(1.05);
 }
 
 .card {
@@ -28,12 +46,25 @@ body {
   color: black;
   padding: 10px;
   font-weight: bold;
-  border: none;
+  border: 2px solid #4d3fcc;
   border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .btn-secundario-outline {
   background-color: transparent;
   border-color: #838fff;
   padding: 10px;
+}
+
+.btn-secundario:hover {
+  transform: scale(1.1);
+  background-color: #4d3fcc;
+  border-color: #372d92;
+  color: white;
+}
+
+.buttons {
+  width: 100%;
 }

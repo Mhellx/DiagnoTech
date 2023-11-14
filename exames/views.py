@@ -17,6 +17,7 @@ def solicitar_exames(request):
 
     elif request.method == "POST":
         exames_id = request.POST.getlist('exames')
+        print(exames_id)
         solicitacao_exames = TiposExames.objects.filter(id__in=exames_id)
 
         # TODO: Calcular preço dos dados disponíveis

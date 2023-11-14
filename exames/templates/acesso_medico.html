@@ -13,17 +13,12 @@
     </tr>
     {% for pedido in pedidos %} {% for exame in pedido.exames.all %}
     <tr class="linha-tabela">
-        <td>{{exame.id}}</td>
+      <td>{{exame.id}}</td>
       <td>{{exame.exame.nome}}</td>
 
       {% if exame.resultado %}
       <td>
-        <a
-          style="text-decoration: none"
-          class="btn-secundario"
-          href="{{exame.resultado.url}}"
-          >Ver exame</a
-        >
+        <a style="text-decoration: none" class="btn-secundario" href="{{exame.resultado.url}}">Ver exame</a>
       </td>
       {% else %}
       <td>Em análise</td>

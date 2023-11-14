@@ -1,20 +1,53 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>VitaLab</title>
-    <link rel="shortcut icon" href="{% static 'geral/img/logo.png' %}" type="image/x-icon">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="{% static 'geral/css/base.css' %}" rel="stylesheet">
-    {% block 'head' %}{% endblock %}
-  </head>
-  <body>
-    {% block 'conteudo' %}{% endblock %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DiagnoTech</title>
+  <link rel="shortcut icon" href="{% static 'geral/img/logo2.png' %}" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="{% static 'geral/css/base.css' %}" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@500&display=swap"
+    rel="stylesheet">
+  {% block 'head' %}{% endblock %}
+</head>
+
+<body>
+  <header>
+    {% if "empresarial" in request.path %}
+    <div class="usuario">
+      <a href="/empresarial/gerenciar_clientes">
+        <img src="{% static 'geral/img/logo2.png' %}" alt="logo">
+        DiagnoTech
+      </a>
+      <a href="/empresarial/gerenciar_clientes">Gerenciar clientes</a>
+    </div>
+    <div class="admin">
+      <a href="/exames/solicitar_exames">Área do cliente</a>
+    </div>
+    {% else %}
+    <div class="usuario">
+      <a href="/exames/solicitar_exames">
+        <img src="{% static 'geral/img/logo2.png' %}" alt="logo">
+        DiagnoTech
+      </a>
+      <a href="/exames/solicitar_exames">Solicitar exames</a>
+      <a href="/exames/gerenciar_pedidos">Gerenciar pedidos</a>
+      <a href="/exames/gerenciar_exames">Gerenciar exames</a>
+      <a href="/exames/gerar_acesso_medico">Gerar acesso médico</a>
+    </div>
+    <div class="admin">
+      <a href="/empresarial/gerenciar_clientes">Acesso médico</a>
+    </div>
+    {% endif %}
+
+  </header>
+  {% block 'conteudo' %}{% endblock %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

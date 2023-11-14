@@ -4,13 +4,17 @@
 }
 
 .bordinha {
-    padding: 10px;
-    margin: 20px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    align-items: center;
+  padding: 10px;
+  margin: 20px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  align-items: center;
 }
 
 .textin {
-    font-size: 22px;
+  font-size: 22px;
+}
+
+h3 {
+  padding-top: 20px;
 }

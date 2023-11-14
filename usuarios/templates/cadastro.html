@@ -11,9 +11,9 @@
   {% endif %}
   <h3 class="font-destaque">Cadastre-se</h3>
   <div class="row">
-    <div class="col-md-3" style="text-align: center">
-      <img src="{% static 'geral/img/logo.png' %}" alt="logo" />
-      <h3>VitaLab</h3>
+    <div class="col-md-3 divCadastro">
+      <img src="{% static 'geral/img/logo2.png' %}" alt="logo" class="logo" />
+      <h3>DiagnoTech</h3>
     </div>
     <div class="col-md-9">
       <form action="{% url 'cadastro' %}" method="POST"> {% csrf_token %}

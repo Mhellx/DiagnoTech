@@ -52,7 +52,7 @@ def logar(request):
         
         if user:
             login(request, user)
-            return redirect('/')
+            return redirect('/exames/solicitar_exames')
         else:
             messages.add_message(request, constants.ERROR, 'Username ou senha inválidos!')
             return redirect('/usuarios/login')

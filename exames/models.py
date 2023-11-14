@@ -45,8 +45,8 @@ class SolicitacaoExame(models.Model):
         if self.status == 'E':
             classes = 'bg-warning text-dark'
             texto = 'Em análise'
-
-        elif self.status == 'F':
+            
+        else:
             classes = 'bg-success'
             texto = 'Finalizado'
 

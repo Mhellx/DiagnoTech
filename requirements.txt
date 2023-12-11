@@ -3,7 +3,6 @@ Brotli==1.1.0
 cffi==1.16.0
 cssselect2==0.7.0
 Django==4.2.8
-django-weasyprint==2.2.2
 fonttools==4.46.0
 html5lib==1.1
 Pillow==10.1.0

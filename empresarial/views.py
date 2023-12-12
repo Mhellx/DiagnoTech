@@ -5,7 +5,7 @@ from django.db.models import Value
 from django.contrib.admin.views.decorators import staff_member_required
 from exames.models import SolicitacaoExame
 from django.http import FileResponse
-from .utils import gerar_pdf_exames, gerar_senha_aleatoria
+# from .utils import gerar_pdf_exames, gerar_senha_aleatoria
 from django.contrib import messages
 from django.contrib.messages import constants
 
@@ -51,17 +51,17 @@ def proxy_pdf(request, exame_id):
     return FileResponse(response)
 
 
-@staff_member_required
-def gerar_senha(request, exame_id):
-    exame = SolicitacaoExame.objects.get(id=exame_id)
+# @staff_member_required
+# def gerar_senha(request, exame_id):
+#     exame = SolicitacaoExame.objects.get(id=exame_id)
 
-    if exame.senha:
-        # Baixar o documento da senha já existente
-        return FileResponse(gerar_pdf_exames(exame.exame.nome, exame.usuario, exame.senha), filename="token.pdf")
+#     if exame.senha:
+#         # Baixar o documento da senha já existente
+#         return FileResponse(gerar_pdf_exames(exame.exame.nome, exame.usuario, exame.senha), filename="token.pdf")
 
-    exame.senha = gerar_senha_aleatoria(9)
-    exame.save()
-    return FileResponse(gerar_pdf_exames(exame.exame.nome, exame.usuario, exame.senha), filename="token.pdf")
+#     exame.senha = gerar_senha_aleatoria(9)
+#     exame.save()
+#     return FileResponse(gerar_pdf_exames(exame.exame.nome, exame.usuario, exame.senha), filename="token.pdf")
 
 
 @staff_member_required

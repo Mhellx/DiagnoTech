@@ -52,8 +52,8 @@
           <div class="buttons">
             <input type="submit" value="Salvar" class="btn-default" style="width: 47%;" />
 
-            <!-- <a href="{}"><input type="button" style="width: 47%;"
-                class="btn-secundario" value="Gerar senha"></a> -->
+            <a href="{% url 'gerar_senha' exame.id %}" target="_blank"><input type="button" style="width: 47%;" class="btn-secundario"
+                value="Gerar senha"></a>
           </div>
         </div>
       </form>
@@ -61,7 +61,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
   <script>
-    /*const container = document.getElementById("pdf-container");
+    const container = document.getElementById("pdf-container");
 
     pdfjsLib
       .getDocument("{% url 'proxy_pdf' exame.id %}")
@@ -78,7 +78,7 @@
             container.appendChild(canvas);
           });
         });
-      });*/
+      });
   </script>
   {% endblock 'conteudo' %}
 </div>
